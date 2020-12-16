@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel(generated)" id="1503460396396-1">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="surname" type="VARCHAR(255)"/>
+            <column name="login" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1503460396396-2" author="Pavel(generated)">
+        <insert tableName="users">
+            <column name="name" value="Andrey"/>
+            <column name="surname" value="Marin"/>
+            <column name="login" value="Marin"/>
+            <column name="password" value="1111 "/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Ivan"/>
+            <column name="surname" value="Popov"/>
+            <column name="login" value="Popov"/>
+            <column name="password" value="2222 "/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
