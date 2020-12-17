@@ -7,7 +7,4 @@ import ua.com.mddorder.domain.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-//    User findByEmail(String email);
-
-//    void update(User user);
 }

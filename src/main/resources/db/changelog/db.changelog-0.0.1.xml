@@ -16,7 +16,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="1503460396396-2" author="Pavel(generated)">
+    <changeSet author="Pavel(generated)" id="1503460396396-2 ">
         <insert tableName="users">
             <column name="name" value="Andrey"/>
             <column name="surname" value="Marin"/>

@@ -33,10 +33,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.getOne(id);
     }
 
-//    @Override
-//    public User getByEmail(String email) throws NotFoundException {
-//        return userRepository.findByEmail(email);
-//    }
 
     @Override
     public List<User> getAll() {
