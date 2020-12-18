@@ -22,12 +22,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@RequestMapping(UserController.REST_URL)
 @RequestMapping("/api/user")
 public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
-
-//    public static final String REST_URL = "/rest/user";
 
     private final UserService userService;
 
@@ -40,20 +37,13 @@ public class UserController {
     public List<User> findAll(Model model) {
         LOGGER.info(UserController.class + " in findAll method");
         List<User> users = userService.getAll();
-//        LOGGER.info("list users in findAll method ->", users);
-//        users.forEach(System.out::println);
-//        model.addAttribute("users", users);
-//        return "userlist";
         return users;
-
     }
-
 
     @GetMapping("/{id}")
     public User findById(Long id) throws NotFoundException {
         return userService.getOne(id);
     }
-
 
     @PostMapping("/login")
     public String login(@PathVariable("login") String login, @PathVariable("password") String password) {
