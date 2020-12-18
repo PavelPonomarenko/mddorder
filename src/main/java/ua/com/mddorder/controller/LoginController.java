@@ -15,7 +15,7 @@ public class LoginController {
         return "/rest/user/login";
     }
 
-    @GetMapping("/authenticated")
+    @RequestMapping("/authenticated")
     public String pageForAuthenticatedUser(Principal principal) {
         return "authenticated user " + principal.getName();
     }

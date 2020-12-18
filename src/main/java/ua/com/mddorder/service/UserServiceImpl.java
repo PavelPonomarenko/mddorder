@@ -7,6 +7,7 @@ import ua.com.mddorder.domain.User;
 import ua.com.mddorder.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -29,8 +30,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User get(long id) throws NotFoundException {
+    public User getOne(long id) throws NotFoundException {
         return userRepository.getOne(id);
+
+
     }
 
 

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ua.com.mddorder.domain.User;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface UserService {
@@ -13,9 +14,7 @@ public interface UserService {
 
     void delete(long id);
 
-    User get(long id) throws NotFoundException;
-
-
+    User getOne(long id) throws NotFoundException;
 
     List<User> getAll();
 
