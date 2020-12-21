@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/v1/user")
 public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
@@ -37,6 +38,7 @@ public class UserController {
     }
 
     @GetMapping("/getAll")
+    @PreAuthorize("hasAuthority('developers:read')")
     public List<User> findAll(Model model) {
         LOGGER.info(UserController.class + " in findAll method");
         List<User> users = userService.getAll();
@@ -44,16 +46,19 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('developers:read')")
     public User findById(@PathVariable Long id) throws NotFoundException {
         return userService.getOne(id);
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('developers:write')")
     public User createUser(@RequestBody User user) {
         return userService.save(user);
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('developers:write')")
     public void deleteUser(@PathVariable Long id) {
         userService.delete(id);
     }

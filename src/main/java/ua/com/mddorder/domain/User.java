@@ -10,6 +10,8 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +23,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode(of = "id")
+//@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "users")
 public class User {
@@ -38,6 +40,13 @@ public class User {
     @Column(name = "password")
     private String password;
 
-//    private Role role;
+    @Column(name = "email")
+    private String email;
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
 
 }
