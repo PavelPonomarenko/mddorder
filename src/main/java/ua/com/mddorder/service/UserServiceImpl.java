@@ -31,7 +31,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getOne(long id) throws NotFoundException {
         return userRepository.getOne(id);
+
+
     }
+
+
     @Override
     public List<User> getAll() {
         return userRepository.findAll();
@@ -39,6 +43,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) throws NotFoundException {
-
+//        userRepository.update(user);
     }
+
+
 }
