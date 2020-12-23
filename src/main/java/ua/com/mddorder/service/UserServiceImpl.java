@@ -7,7 +7,6 @@ import ua.com.mddorder.domain.User;
 import ua.com.mddorder.repository.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {

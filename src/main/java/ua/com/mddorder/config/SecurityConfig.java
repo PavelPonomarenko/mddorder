@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import ua.com.mddorder.security.JwtConfigurer;
 
 @Configuration
@@ -30,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/").permitAll()
                 .antMatchers("/api/v1/auth/login").permitAll()
                 .anyRequest()
                 .authenticated()

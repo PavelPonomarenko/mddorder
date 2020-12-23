@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet author="Pavel" id="007-1">
+    <changeSet author="paveladmin" id="admin007-1">
         <createTable tableName="users">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -19,28 +19,7 @@
         </createTable>
     </changeSet>
 
-
-    <changeSet author="Pavel" id="007-2 ">
-        <insert tableName="users">
-            <column name="name" value="Andrey"/>
-            <column name="surname" value="Marin"/>
-            <column name="email" value="marin@gmail.com"/>
-            <column name="login" value="marin"/>
-            <column name="password" value="$2y$12$e3SV32pl2rSYP4bea/sok.oDoOrp6WluCicjxDZDl1RoHS/.r4BPe "/>
-            <column name="role" value="USER"/>
-            <column name="status" value="ACTIVE"/>
-        </insert>
-        <insert tableName="users">
-            <column name="name" value="Pavel"/>
-            <column name="surname" value="Ponomarenko"/>
-            <column name="email" value="ponomarenko.kyiv@gmail.com"/>
-            <column name="login" value="pavel"/>
-            <column name="password" value="$2y$12$bg1TR1dAFtK4.XvTioeyVup3Tn/.aDySmzX1W2.SYwLvlPKRalRl."/>
-            <column name="role" value="ADMIN"/>
-            <column name="status" value="ACTIVE"/>
-        </insert>
-    </changeSet>
-    <changeSet author="Pavel" id="007-3">
+    <changeSet author="paveladmin" id="admin007-2">
         <createTable tableName="roles">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -49,15 +28,38 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="Pavel" id="007-4">
+    <changeSet author="paveladmin" id="admin007-3">
         <insert tableName="roles">
             <column name="name" value="ROLE_ADMIN"/>
             <column name="name" value="ROLE_USER"/>
         </insert>
     </changeSet>
 
-    <changeSet author="Pavel" id="007-5">
-        <dropTable tableName="roles"></dropTable>
-        <dropTable tableName="users"></dropTable>
+    <changeSet author="Pavel" id="007-4">
+        <insert tableName="users">
+            <column name="name" value="Andrey"/>
+            <column name="surname" value="Marin"/>
+            <column name="email" value="marin@gmail.com"/>
+            <column name="login" value="marin"/>
+            <column name="password" value="marin"/>
+            <column name="role" value="USER"/>
+            <column name="status" value="ACTIVE"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Pavel"/>
+            <column name="surname" value="Ponomarenko"/>
+            <column name="email" value="ponomarenko.kyiv@gmail.com"/>
+            <column name="login" value="pavel"/>
+            <column name="password" value="pavel"/>
+            <column name="role" value="ADMIN"/>
+            <column name="status" value="ACTIVE"/>
+        </insert>
     </changeSet>
+    <changeSet author="paveladmin" id="admin007-5">
+        <insert tableName="roles">
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+    </changeSet>
+
+
 </databaseChangeLog>

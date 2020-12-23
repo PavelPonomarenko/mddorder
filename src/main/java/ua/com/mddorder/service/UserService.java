@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import ua.com.mddorder.domain.User;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public interface UserService {
@@ -21,4 +20,15 @@ public interface UserService {
     void update(User user) throws NotFoundException;
 
 
+    default User findByLogin(String username) {
+        return null;
+    }
+
+    default User findByLoginAndPassword(String login, String password) {
+        return null;
+    }
+
+    default void saveUser(User u) {
+
+    }
 }

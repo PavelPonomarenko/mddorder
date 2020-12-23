@@ -15,15 +15,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.util.Objects;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
-//@EqualsAndHashCode(of = "id")
+@Data
 @Entity
 @Table(name = "users")
 public class User {
@@ -34,19 +30,19 @@ public class User {
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
-    private String surname;
+    private String surame;
+    @Column(name = "email")
+    private String email;
     @Column(name = "login")
     private String login;
     @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
-    private String email;
     @Enumerated(value = EnumType.STRING)
     @Column(name = "role")
     private Role role;
     @Enumerated(value = EnumType.STRING)
     @Column(name = "status")
     private Status status;
+
 
 }
