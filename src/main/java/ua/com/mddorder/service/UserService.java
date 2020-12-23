@@ -19,7 +19,6 @@ public interface UserService {
 
     void update(User user) throws NotFoundException;
 
-
     default User findByLogin(String username) {
         return null;
     }

@@ -26,7 +26,6 @@ import java.util.Map;
 public class AuthenticationRestControllerV1 {
 
     private final AuthenticationManager authenticationManager;
-
     private UserRepository userRepository;
     private JwtTokenProvider jwtTokenProvider;
 
