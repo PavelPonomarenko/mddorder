@@ -10,7 +10,7 @@ import ua.com.mddorder.domain.User;
 
 import java.util.Optional;
 
-@Repository
+//@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Transactional
@@ -18,5 +18,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("DELETE FROM User u WHERE u.id=:id")
     int delete(@Param("id") Long id);
 
-    Optional<User> findByEmail(String email);
+//    Optional<User> findByEmail(String email);
 }
