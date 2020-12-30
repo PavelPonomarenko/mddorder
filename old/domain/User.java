@@ -40,11 +40,14 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "creation_date")
     private LocalDate creationDate;
-
-    @Embedded
-    private Credentials credentials;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Address address;
@@ -72,6 +75,5 @@ public class User {
         this.roles.remove(role);
         role.setUser(null);
     }
-
 
 }

@@ -6,11 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ua.com.mddorder.domain.User;
+import ua.com.mddorder.model.User;
 
 import java.util.Optional;
 
-//@Repository
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Transactional
@@ -18,5 +18,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("DELETE FROM User u WHERE u.id=:id")
     int delete(@Param("id") Long id);
 
-//    Optional<User> findByEmail(String email);
+    Optional<User> findByEmail(String email);
+
+//    Optional<User> findByUsername(String username);
+
+//    Boolean existsByUsername(String username);
+
+//    Boolean existsByEmail(String email);
 }

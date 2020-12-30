@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="007_1_create_tables_users">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="creation_date" type="Date"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Pavel" id="007_2_create_tables_roles">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role_type" type="VARCHAR(20)"/>
+            <column name="creation_date" type="TIMESTAMP"/>
+            <column name="user_id" type="int">
+                <constraints nullable="false" foreignKeyName="FK_roles_users" references="users(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Pavel" id="007_2_create_tables_address">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="street" type="VARCHAR(255)"/>
+            <column name="street_number" type="VARCHAR(20)"/>
+            <column name="apartment_number" type="VARCHAR(20)"/>
+            <column name="creation_date" type="TIMESTAMP"/>
+            <column name="user_id" type="int">
+                <constraints nullable="false" foreignKeyName="FK_address_users" references="users(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

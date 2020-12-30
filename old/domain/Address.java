@@ -39,9 +39,6 @@ public class Address {
     @Column(name = "apartment_number")
     private String apartmentNumber;
 
-//    @Column(name = "zip_code")
-//    private String zipCode;
-
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 

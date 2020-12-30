@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!--    <changeSet author="paveladmin" id="admin007-1">-->
+    <!--        <createTable tableName="users">-->
+    <!--            <column autoIncrement="true" name="id" type="BIGINT">-->
+    <!--                <constraints primaryKey="true"/>-->
+    <!--            </column>-->
+    <!--            <column name="name" type="VARCHAR(255)"/>-->
+    <!--            <column name="surname" type="VARCHAR(255)"/>-->
+    <!--            <column name="email" type="VARCHAR(255)"/>-->
+    <!--            <column name="login" type="VARCHAR(255)"/>-->
+    <!--            <column name="password" type="VARCHAR(255)"/>-->
+    <!--            <column name="role" type="VARCHAR(255)"/>-->
+    <!--            <column name="status" type="VARCHAR(255)"/>-->
+    <!--        </createTable>-->
+    <!--    </changeSet>-->
+
+    <!--    <changeSet author="paveladmin" id="admin007-2">-->
+    <!--        <createTable tableName="roles">-->
+    <!--            <column autoIncrement="true" name="id" type="BIGINT">-->
+    <!--                <constraints primaryKey="true"/>-->
+    <!--            </column>-->
+    <!--            <column name="name" type="VARCHAR(20)"/>-->
+    <!--        </createTable>-->
+    <!--    </changeSet>-->
+
+    <changeSet author="Pavel" id="008_1_insert_table_users">
+        <insert tableName="users">
+            <column name="first_name" value="Pavel"/>
+            <column name="last_name" value="Ponomarenko"/>
+            <column name="email" value="ponomarenko.kyiv@gmail.com"/>
+            <column name="password" value="1111"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Pavel" id="008_2_insert_table_users">
+        <insert tableName="users">
+            <column name="first_name" value="Igor"/>
+            <column name="last_name" value="Kovalenko"/>
+            <column name="email" value="kovalenko@gmail.com"/>
+            <column name="password" value="2222"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="Pavel" id="008_3_insert_table_roles">
+        <insert tableName="roles">
+            <column name="role_type" value="ROLE_ADMIN"/>
+        </insert>
+    </changeSet>
+    <changeSet author="Pavel" id="008_4_insert_table_roles">
+        <insert tableName="roles">
+            <column name="role_type" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+
+
+    <!--    <changeSet author="Pavel" id="007-4">-->
+    <!--        <insert tableName="users">-->
+    <!--            <column name="name" value="Andrey"/>-->
+    <!--            <column name="surname" value="Marin"/>-->
+    <!--            <column name="email" value="marin@gmail.com"/>-->
+    <!--            <column name="login" value="marin"/>-->
+    <!--            <column name="password" value="marin"/>-->
+    <!--            <column name="role" value="USER"/>-->
+    <!--            <column name="status" value="ACTIVE"/>-->
+    <!--        </insert>-->
+    <!--        <insert tableName="users">-->
+    <!--            <column name="name" value="Pavel"/>-->
+    <!--            <column name="surname" value="Ponomarenko"/>-->
+    <!--            <column name="email" value="ponomarenko.kyiv@gmail.com"/>-->
+    <!--            <column name="login" value="pavel"/>-->
+    <!--            <column name="password" value="pavel"/>-->
+    <!--            <column name="role" value="ADMIN"/>-->
+    <!--            <column name="status" value="ACTIVE"/>-->
+    <!--        </insert>-->
+    <!--    </changeSet>-->
+    <!--    <changeSet author="paveladmin" id="admin007-5">-->
+    <!--        <insert tableName="roles">-->
+    <!--            <column name="name" value="ROLE_ADMIN"/>-->
+    <!--        </insert>-->
+    <!--    </changeSet>-->
+
+
+</databaseChangeLog>
