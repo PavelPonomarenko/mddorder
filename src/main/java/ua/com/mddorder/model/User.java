@@ -1,38 +1,27 @@
 package ua.com.mddorder.model;
 
-import lombok.AccessLevel;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode(of = "id")
+@Data
 @Entity
 @Table(name = "users")
-public class User {
-    @Id
-    @Column(name = "id")
-    private Long id;
+public class User extends BaseEntity {
+
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "first_name")
     private String firstName;
@@ -46,34 +35,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "creation_date")
-    private LocalDate creationDate;
-//
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-//    private Address address;
-//
-//    @Setter(AccessLevel.PRIVATE)
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Set<Role> roles = new HashSet<>();
-//
-//    public void setAddress(Address address) {
-//        address.setUser(this);
-//        this.address = address;
-//    }
-//
-//    public void addRole(Role role) {
-//        roles.add(role);
-//        role.setUser(this);
-//    }
-//
-//    public void addRoles(List<Role> roles) {
-//        this.roles.addAll(roles);
-//        roles.forEach(role -> role.setUser(this));
-//    }
-//
-//    public void removeRole(Role role) {
-//        this.roles.remove(role);
-//        role.setUser(null);
-//    }
-
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_roles",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
+    private List<Role> roles;
 }
