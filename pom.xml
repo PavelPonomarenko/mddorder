@@ -18,17 +18,12 @@
     </parent>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!--        <maven.compiler.source>15</maven.compiler.source>-->
-        <!--        <maven.compiler.target>15</maven.compiler.target>-->
-        <!--        <java.version>15</java.version>-->
-
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.11</maven.compiler.source>
-        <maven.compiler.target>1.11</maven.compiler.target>
-
-
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--        <maven.compiler.source>1.11</maven.compiler.source>-->
+<!--        <maven.compiler.target>1.11</maven.compiler.target>-->
         <jjwt.version>0.9.1</jjwt.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
@@ -52,15 +47,15 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-test</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -104,7 +99,8 @@
                 <artifactId>liquibase-plugin</artifactId>
                 <version>1.9.5.0</version>
                 <configuration>
-                    <changeLogFile>src/main/resources/db/changelog/db.changelog-master.xml</changeLogFile>
+<!--                    <changeLogFile>src/main/resources/db/changelog/db.changelog-master.xml</changeLogFile>-->
+                    <changeLogFile>classpath:/db/changelog/db.changelog-master.xml</changeLogFile>
                     <propertyFile>src/main/resources/liquibase.properties</propertyFile>
                     <!--                    <propertyFileWillOverride>true</propertyFileWillOverride>-->
                 </configuration>

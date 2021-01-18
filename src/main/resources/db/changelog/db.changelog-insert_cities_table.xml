@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="insert_cities_table">
+        <insert tableName="cities">
+            <column name="name" value="Київ"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Дніпро"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Львів"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Харків"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Миколаїв"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Запоріжжя"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Івано-Франківськ"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Суми"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Житомир"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Одеса"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="name" value="Полтава"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="name" value="Ужгород"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="name" value="Кропивницький"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="name" value="Тернопіль"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Вінниця"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Луцьк"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Рівне"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Хмельницький"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Чернівці"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Херсон"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Донецьк"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Луганськ"/>
+        </insert>
+        <insert tableName="cities">
+            <column name="name" value="Сімферополь"/>
+        </insert>
+<!--        <insert tableName="cities">-->
+<!--            <column name="name" value=""/>-->
+<!--        </insert>-->
+    </changeSet>
+
+
+</databaseChangeLog>

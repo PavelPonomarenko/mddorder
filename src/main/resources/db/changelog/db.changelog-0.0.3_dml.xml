@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!--    _________________ brand_names ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.1">
+        <insert tableName="brand_names">
+            <column name="name" value="АНЦ"/>
+            <column name="full_name" value="Аптека Низьких Цін"/>
+        </insert>
+        <insert tableName="brand_names">
+            <column name="name" value="АДД"/>
+            <column name="full_name" value="Аптека Доброго Дня"/>
+        </insert>
+    </changeSet>
+
+    <!--    _________________ LLC ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.2">
+        <insert tableName="LLC">
+            <column name="name" value="ТОВ ПУП"/>
+            <column name="full_name" value="Товариство з обмеженою відповідальністю Пуп Уп Пуп"/>
+<!--            <column name="brand_name" value="BIGINT"/>-->
+        </insert>
+
+        <insert tableName="LLC">
+            <column name="name" value="ТОВ Івоново"/>
+            <column name="full_name" value="Товариство з обмеженою відповідальністю Іваново"/>
+<!--            <column name="brand_name" value="BIGINT"/>-->
+        </insert>
+    </changeSet>
+
+
+
+    <changeSet author="Pavel" id="0.0.4">
+        <insert tableName="users">
+            <column name="username" value="andrey"/>
+            <column name="first_name" value="Andrey"/>
+            <column name="last_name" value="Marin"/>
+            <column name="email" value="marin@gmail.com"/>
+            <column name="password" value="1111"/>
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="pavel"/>
+            <column name="first_name" value="Pavel"/>
+            <column name="last_name" value="Ponomarenko"/>
+            <column name="email" value="ponomarenko.kyiv@gmail.com"/>
+            <column name="password" value="2222"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="Pavel" id="0.0.5">
+        <insert tableName="users">
+            <column name="username" value="ivan"/>
+            <column name="first_name" value="Ivan"/>
+            <column name="last_name" value="Ivanov"/>
+            <column name="email" value="ivanov@gmail.com"/>
+            <column name="password" value="3333"/>
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="oleg"/>
+            <column name="first_name" value="Oleg"/>
+            <column name="last_name" value="Olegov"/>
+            <column name="email" value="olegov@gmail.com"/>
+            <column name="password" value="4444"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

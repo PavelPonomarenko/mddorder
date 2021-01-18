@@ -1,36 +1,43 @@
-package ua.com.mddorder.rest;
+package ua.com.mddorder.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ua.com.mddorder.dto.UserDto;
-import ua.com.mddorder.model.User;
 import ua.com.mddorder.service.UserService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping(value = "/api/v1/users/")
-public class UserRestControllerV1 {
+@RequestMapping(value = "/api/v1/user/")
+public class UserRestController {
+
     private final UserService userService;
 
     @Autowired
-    public UserRestControllerV1(UserService userService) {
+    public UserRestController(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping(value = "{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id) {
-        User user = userService.findById(id);
-
-        if (user == null) {
+    @RequestMapping("all")
+    public ResponseEntity<List<UserDto>> getAllUser() {
+        List<UserDto> userDtoList = userService.getAll();
+        if (userDtoList == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
-        UserDto result = UserDto.fromUser(user);
-
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
+
+    //    @RequestMapping(path = "profile/")
+    @GetMapping
+    public String getProfile() {
+//        return "redirect:/login";
+//        return "hello";
+        return "login";
+    }
+
+
 }

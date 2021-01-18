@@ -1,12 +1,33 @@
-<?xml version="1.0
+<?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
-        xmlns="htt
-        xmlns:xsi=
-        xsi:schema hangelog
-                   og/dbchangelog-3.8.xsd">
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-<!--        <inclu xml"/>-->
-<!--        <inclu xml"/>-->
-    <include file="db/changelog/db.changelog-0.0.3.xml"/>
+
+    <include file="db/changelog/db.changelog-0.0.1_ddl.xml"/>
+    <include file="db/changelog/db.changelog-0.0.2_ddl.xml"/>
+
+    <include file="db/changelog/db.changelog-0.0.3_dml.xml"/>
+
+
+    <include file="db/changelog/db.changelog-insert_cities_table.xml"/>
+    <include file="db/changelog/db.changelog-insert_city_indexes_table.xml"/>
+
+    <include file="db/changelog/db.changelog-insert_countries_table.xml"/>
+
+    <include file="db/changelog/db.changelog-insert_street_numbers_table.xml"/>
+    <include file="db/changelog/db.changelog-insert_streets_table.xml"/>
+
+    <include file="db/changelog/db.changelog-insert_addresses_table.xml"/>
+
+    <include file="db/changelog/db.changelog-insert_products_table.xml"/>
+    <include file="db/changelog/db.changelog-insert_units_table.xml"/>
+    <include file="db/changelog/db.changelog-insert_roles_table.xml"/>
+    <include file="db/changelog/db.changelog-insert_order_statuses_table.xml"/>
+
 
 </databaseChangeLog>
+
+

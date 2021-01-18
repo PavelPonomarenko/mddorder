@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="insert_cities_index_table">
+        <insert tableName="city_indexes">
+            <column name="city_index" value="01001"/>
+        </insert>
+        <insert tableName="city_indexes">
+            <column name="city_index" value="01004"/>
+        </insert>
+        <insert tableName="city_indexes">
+            <column name="city_index" value="01008"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>

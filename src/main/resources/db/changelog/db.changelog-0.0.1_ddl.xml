@@ -5,46 +5,233 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-<!--    <changeSet author="Pavel" id="0.0.1">-->
-<!--        <createTable tableName="users">-->
-<!--            <column autoIncrement="true" name="id" type="BIGINT">-->
-<!--                <constraints primaryKey="true"/>-->
-<!--            </column>-->
-<!--            <column name="first_name" type="VARCHAR(255)"/>-->
-<!--            <column name="last_name" type="VARCHAR(255)"/>-->
-<!--            <column name="email" type="VARCHAR(255)"/>-->
-<!--            <column name="password" type="VARCHAR(255)"/>-->
-<!--            <column name="creation_date" type="Date"/>-->
-<!--        </createTable>-->
-<!--    </changeSet>-->
+<!--    brand_names-->
+<!--    street_numbers-->
+<!--    streets-->
+<!--    cities-->
+<!--    city_indexes-->
+<!--    countries-->
+<!--    addresses-->
+<!--    LLC-->
+<!--    pharmacies-->
+<!--    roles-->
+<!--    employees-->
+<!--    users-->
 
-<!--    <changeSet author="Pavel" id="007_2_create_tables_roles">-->
-<!--        <createTable tableName="roles">-->
-<!--            <column autoIncrement="true" name="id" type="BIGINT">-->
-<!--                <constraints primaryKey="true"/>-->
-<!--            </column>-->
-<!--            <column name="role_type" type="VARCHAR(20)"/>-->
-<!--            <column name="creation_date" type="TIMESTAMP"/>-->
-<!--            <column name="user_id" type="int">-->
-<!--                <constraints nullable="false" foreignKeyName="FK_roles_users" references="users(id)"/>-->
-<!--            </column>-->
-<!--        </createTable>-->
-<!--    </changeSet>-->
 
-<!--    <changeSet author="Pavel" id="007_2_create_tables_address">-->
-<!--        <createTable tableName="address">-->
-<!--            <column autoIncrement="true" name="id" type="BIGINT">-->
-<!--                <constraints primaryKey="true"/>-->
+    <!--    _________________ brand_names ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.1">
+        <createTable tableName="brand_names">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="full_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <!--    _________________ street_numbers ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.2">
+        <createTable tableName="street_numbers">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="number" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <!--    _________________ streets ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.3">
+        <createTable tableName="streets">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <!--    _________________ cities ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.4">
+        <createTable tableName="cities">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <!--    _________________ city_indexes ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.5">
+        <createTable tableName="city_indexes">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="city_index" type="BIGINT"/>
+
+<!--            <column name="city_index" type="BIGINT">-->
+<!--                <constraints foreignKeyName="FK_city_indexes_cities" references="cities(id)"/>-->
 <!--            </column>-->
-<!--            <column name="city" type="VARCHAR(255)"/>-->
-<!--            <column name="street" type="VARCHAR(255)"/>-->
-<!--            <column name="street_number" type="VARCHAR(20)"/>-->
-<!--            <column name="apartment_number" type="VARCHAR(20)"/>-->
-<!--            <column name="creation_date" type="TIMESTAMP"/>-->
-<!--            <column name="user_id" type="int">-->
-<!--                <constraints nullable="false" foreignKeyName="FK_address_users" references="users(id)"/>-->
-<!--            </column>-->
-<!--        </createTable>-->
-<!--    </changeSet>-->
+        </createTable>
+    </changeSet>
+
+
+    <!--    _________________ countries ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.6">
+        <createTable tableName="countries">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="manufacturer_country_code" type="INT"/>
+            <column name="country_code_alpha3" type="VARCHAR(255)"/>
+            <column name="country_code_number" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <!--    _________________ addresses ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.7">
+        <createTable tableName="addresses">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="country_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_addresses_countries" references="countries(id)"/>
+            </column>
+            <column name="city_index_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_addresses_city_indexes" references="city_indexes(id)"/>
+            </column>
+            <column name="cities_id" type="BIGINT">
+                <constraints foreignKeyName="FK_addresses_cities" references="cities(id)"/>
+            </column>
+            <column name="streets_id" type="BIGINT">
+                <constraints foreignKeyName="FK_addresses_streets" references="streets(id)"/>
+            </column>
+            <column name="street_numbers" type="BIGINT">
+                <constraints foreignKeyName="FK_addresses_street_numbers" references="street_numbers(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!--    _________________ LLC ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.8">
+        <createTable tableName="LLC">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="full_name" type="VARCHAR(255)"/>
+
+            <column name="brand_name" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="FK_LLC_brand_names" references="brand_names(id)"/>
+            </column>
+            <column name="address_id" type="BIGINT">
+                <constraints foreignKeyName="FK_LLC_addresses" references="addresses(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <!--    _________________ pharmacies ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.9">
+        <createTable tableName="pharmacies">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="LLC_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_pharmacies_LLC" references="LLC(id)"/>
+            </column>
+            <column name="address_id" type="BIGINT">
+                <constraints foreignKeyName="FK_pharmacies_addresses" references="addresses(id)"/>
+            </column>
+            <column name="email_pharmacy" type="VARCHAR(255)"/>
+            <column name="password_pharmacy" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <!--    _________________ roles ____________________________-->
+
+    <changeSet author="Pavel" id="create_roles_table">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <!--    _________________ employees ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.10">
+        <createTable tableName="employees">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="surname" type="VARCHAR(255)"/>
+
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="enabled" type="BOOL"/>
+            <column name="registered" type="timestamp"/>
+            <column name="role_id" type="BIGINT">
+                <constraints foreignKeyName="FK_pharmacies_roles" references="roles(id)"/>
+            </column>
+
+            <column name="email" type="VARCHAR(255)"/>
+
+            <column name="pharmacy_id" type="BIGINT">
+                <constraints foreignKeyName="FK_employees_pharmacies" references="pharmacies(id)"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <!--    _________________ users ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.3.2">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+
+    <!--    <changeSet author="Pavel" id="0.0.1">-->
+    <!--        <createTable tableName="users">-->
+    <!--            <column autoIncrement="true" name="id" type="BIGINT">-->
+    <!--                <constraints primaryKey="true"/>-->
+    <!--            </column>-->
+    <!--            <column name="first_name" type="VARCHAR(255)"/>-->
+    <!--            <column name="last_name" type="VARCHAR(255)"/>-->
+    <!--            <column name="email" type="VARCHAR(255)"/>-->
+    <!--            <column name="password" type="VARCHAR(255)"/>-->
+    <!--            <column name="creation_date" type="Date"/>-->
+    <!--        </createTable>-->
+    <!--    </changeSet>-->
+
+    <!--    <changeSet author="Pavel" id="007_2_create_tables_roles">-->
+    <!--        <createTable tableName="roles">-->
+    <!--            <column autoIncrement="true" name="id" type="BIGINT">-->
+    <!--                <constraints primaryKey="true"/>-->
+    <!--            </column>-->
+    <!--            <column name="role_type" type="VARCHAR(20)"/>-->
+    <!--            <column name="creation_date" type="TIMESTAMP"/>-->
+    <!--    <column name="user_id" type="int">-->
+    <!--        <constraints nullable="false" foreignKeyName="FK_roles_users" references="users(id)"/>-->
+    <!--    </column>-->
+    <!--        </createTable>-->
+    <!--    </changeSet>-->
+
+
 
 </databaseChangeLog>

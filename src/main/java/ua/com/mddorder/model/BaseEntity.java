@@ -1,35 +1,41 @@
 package ua.com.mddorder.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import java.util.Date;
+import javax.persistence.SequenceGenerator;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(of = "id")
+@Access(AccessType.FIELD)
 @MappedSuperclass
-@Data
 public class BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @CreatedDate
-    @Column(name = "created")
-    private Date created;
+//    @Id
+//    @SequenceGenerator(
+//            name = "baseEntity_sequence",
+//            sequenceName = "baseEntity_sequence",
+//            allocationSize = 1)
+//    @GeneratedValue(
+//            strategy = GenerationType.SEQUENCE,
+//            generator = "baseEntity_sequence")
+    protected Long id;
 
-    @LastModifiedDate
-    @Column(name = "updated")
-    private Date updated;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status")
-    private Status status;
 }
