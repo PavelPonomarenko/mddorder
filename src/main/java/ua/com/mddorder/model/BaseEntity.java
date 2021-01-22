@@ -16,14 +16,15 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.SequenceGenerator;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode(of = "id")
-@Access(AccessType.FIELD)
-@MappedSuperclass
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Getter
+//@Setter
+//@ToString
+////@EqualsAndHashCode(of = "id")
+//@EqualsAndHashCode(of = "id")
+//@Access(AccessType.FIELD)
+//@MappedSuperclass
 public class BaseEntity {
 
 

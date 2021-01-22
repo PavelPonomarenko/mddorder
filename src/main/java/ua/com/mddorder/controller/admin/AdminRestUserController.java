@@ -1,7 +1,6 @@
-package ua.com.mddorder.controller;
+package ua.com.mddorder.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,13 +19,13 @@ import ua.com.mddorder.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/admin/")
-public class AdminRestController {
+@RequestMapping(path = "/api/v1/admin/user/")
+public class AdminRestUserController {
 
     private final UserService userService;
 
     @Autowired
-    public AdminRestController(UserService userService) {
+    public AdminRestUserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -39,7 +38,7 @@ public class AdminRestController {
         return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
 
-    @GetMapping(value = "users/{id}")
+    @GetMapping(value = "{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id) {
         User user = userService.findById(id);
         if (user == null) {
@@ -49,33 +48,20 @@ public class AdminRestController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "delete/users/{id}")
+    @DeleteMapping(path = "delete/{id}")
     public void delete(@PathVariable("id") Long userId) {
         userService.delete(userId);
     }
-//
-//    @PostMapping
-//    public ResponseEntity<UserDto> registerNewUser(@RequestBody User user) {
-//        HttpHeaders headers = new HttpHeaders();
-//        if (user == null) {
-//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//        }
-//        User userResult = userService.addNewUser(user);
-//        UserDto userDto = UserDto.fromUserToUserDto(userResult);
-//
-//        return new ResponseEntity<>(userDto, headers, HttpStatus.CREATED);
-//    }
-    @PostMapping(path = "add/user")
+
+    @PostMapping(path = "add")
     public void registerNewUser(@RequestBody User user) {
         userService.addNewUser(user);
-
     }
 
-    @PutMapping(path = "update/users/{id}")
+    @PutMapping(path = "update/{id}")
     public void update(@PathVariable Long id,
                        @RequestParam(required = false) String username,
                        @RequestParam(required = false) String email) {
         userService.update(id, username, email);
     }
-
 }

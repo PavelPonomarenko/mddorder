@@ -26,6 +26,7 @@
     <include file="db/changelog/db.changelog-insert_units_table.xml"/>
     <include file="db/changelog/db.changelog-insert_roles_table.xml"/>
     <include file="db/changelog/db.changelog-insert_order_statuses_table.xml"/>
+    <include file="db/changelog/db.changelog-insert_employees_table.xml"/>
 
 
 </databaseChangeLog>

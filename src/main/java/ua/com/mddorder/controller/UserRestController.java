@@ -31,13 +31,8 @@ public class UserRestController {
         return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
 
-    //    @RequestMapping(path = "profile/")
     @GetMapping
     public String getProfile() {
-//        return "redirect:/login";
-//        return "hello";
         return "login";
     }
-
-
 }

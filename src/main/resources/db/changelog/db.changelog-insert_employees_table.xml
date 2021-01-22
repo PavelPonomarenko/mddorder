@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="insert_employees_table">
+        <insert tableName="employees">
+            <column name="name" value="Pavel"/>
+            <column name="surname" value="Ponomarenko"/>
+            <column name="username" value="pavel1979"/>
+            <column name="password" value="1111"/>
+            <column name="enabled" value="true"/>
+            <column name="registered" valueDate="now()"/>
+            <column name="role_id" value="4"/>
+
+            <column name="email" value="ponomarenko2008@gmail.com"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="name" value="Andrey"/>
+            <column name="surname" value="Andreev"/>
+            <column name="username" value="andrey1977"/>
+            <column name="password" value="2222"/>
+            <column name="enabled" value="true"/>
+            <column name="registered" valueDate="now()"/>
+            <column name="role_id" value="2"/>
+            <column name="email" value="andreev@gmail.com"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="name" value="Sergey"/>
+            <column name="surname" value="Sergeev"/>
+            <column name="username" value="sergey1980"/>
+            <column name="password" value="3333"/>
+            <column name="enabled" value="true"/>
+            <column name="registered" valueDate="now()"/>
+            <column name="role_id" value="3"/>
+            <column name="email" value="sergeev@gmail.com"/>
+        </insert>
+        <!--        <insert tableName="employees">-->
+        <!--            <column name="barcode" value="255466"/>-->
+        <!--            <column name="name" value="Молоко 2,5%"/>-->
+        <!--            <column name="price" value="30.5"/>-->
+        <!--        </insert>-->
+
+        <!--        <insert tableName="employees">-->
+        <!--            <column name="barcode" value="255467"/>-->
+        <!--            <column name="name" value="Мінеральна вода"/>-->
+        <!--            <column name="price" value="18.99"/>-->
+        <!--        </insert>-->
+
+    </changeSet>
+
+
+</databaseChangeLog>

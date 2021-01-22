@@ -5,20 +5,22 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-<!--    brand_names-->
-<!--    street_numbers-->
-<!--    streets-->
-<!--    cities-->
-<!--    city_indexes-->
-<!--    countries-->
-<!--    addresses-->
-<!--    LLC-->
-<!--    pharmacies-->
-<!--    roles-->
-<!--    employees-->
-<!--    users-->
+    <!--    brand_names-->
+    <!--    street_numbers-->
+    <!--    streets-->
+    <!--    cities-->
+    <!--    city_indexes-->
+    <!--    countries-->
+    <!--    addresses-->
+    <!--    LLC-->
+    <!--    pharmacies-->
+    <!--    roles-->
+    <!--    employees-->
+    <!--    users-->
 
+    <changeSet author="Pavel" id="seq">
 
+    </changeSet>
     <!--    _________________ brand_names ____________________________-->
 
     <changeSet author="Pavel" id="0.0.1">
@@ -71,9 +73,9 @@
             </column>
             <column name="city_index" type="BIGINT"/>
 
-<!--            <column name="city_index" type="BIGINT">-->
-<!--                <constraints foreignKeyName="FK_city_indexes_cities" references="cities(id)"/>-->
-<!--            </column>-->
+            <!--            <column name="city_index" type="BIGINT">-->
+            <!--                <constraints foreignKeyName="FK_city_indexes_cities" references="cities(id)"/>-->
+            <!--            </column>-->
         </createTable>
     </changeSet>
 
@@ -139,8 +141,10 @@
 
     <changeSet author="Pavel" id="0.0.9">
         <createTable tableName="pharmacies">
+
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
+
             </column>
             <column name="name" type="VARCHAR(255)"/>
             <column name="LLC_id" type="BIGINT">
@@ -231,7 +235,6 @@
     <!--    </column>-->
     <!--        </createTable>-->
     <!--    </changeSet>-->
-
 
 
 </databaseChangeLog>

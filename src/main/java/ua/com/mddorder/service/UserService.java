@@ -18,7 +18,5 @@ public interface UserService {
 
     User addNewUser(User user);
 
-//    void update(Long id);
-
     void update(Long id, String username, String email);
 }

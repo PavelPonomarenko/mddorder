@@ -29,15 +29,13 @@ public class UserDto {
     }
 
     public static UserDto fromUserToUserDto(User user) {
+
         UserDto userDto = new UserDto();
         userDto.setId(user.getId());
         userDto.setUsername(user.getUsername());
         userDto.setFirstName(user.getFirstName());
         userDto.setLastName(user.getLastName());
         userDto.setEmail(user.getEmail());
-
         return userDto;
     }
-
-
 }

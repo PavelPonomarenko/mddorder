@@ -13,8 +13,6 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-//    User findByUsername(String name);
-
     @Query("SELECT u FROM User u WHERE u.email=?1")
     Optional<User> findUserByEmail(String email);
 
@@ -22,5 +20,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
     @Query("DELETE FROM User u WHERE u.id = ?1")
     int deleteUserById(Long id);
-
 }

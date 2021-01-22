@@ -1,10 +1,11 @@
-package ua.com.mddorder.service;
+package ua.com.mddorder.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.com.mddorder.dto.UserDto;
 import ua.com.mddorder.model.User;
 import ua.com.mddorder.repository.UserRepository;
+import ua.com.mddorder.service.UserService;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -78,7 +79,6 @@ public class UserServiceImpl implements UserService {
         if (!exists) {
             throw new IllegalStateException("user with id " + id + " does not exists");
         }
-//        userRepository.deleteById(id);
         userRepository.deleteUserById(id);
     }
 
