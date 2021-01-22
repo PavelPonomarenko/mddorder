@@ -48,7 +48,7 @@ public class AdminRestEmployeeController {
         return new ResponseEntity<>(saveEmployee, HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "id") Long id) {
         Employee employee = adminService.getOne(id);
         if (employee == null) {
