@@ -1,4 +1,4 @@
-package ua.com.mddorder.config;
+package ua.com.mddorder.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
