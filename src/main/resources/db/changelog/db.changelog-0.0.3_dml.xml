@@ -10,11 +10,11 @@
     <changeSet author="Pavel" id="0.0.1">
         <insert tableName="brand_names">
             <column name="name" value="АНЦ"/>
-            <column name="full_name" value="Аптека Низьких Цін"/>
+            <column name="full_name" value="Кока-Кола"/>
         </insert>
         <insert tableName="brand_names">
             <column name="name" value="АДД"/>
-            <column name="full_name" value="Аптека Доброго Дня"/>
+            <column name="full_name" value="Пепсі"/>
         </insert>
     </changeSet>
 
@@ -23,18 +23,13 @@
     <changeSet author="Pavel" id="0.0.2">
         <insert tableName="LLC">
             <column name="name" value="ТОВ ПУП"/>
-            <column name="full_name" value="Товариство з обмеженою відповідальністю Пуп Уп Пуп"/>
-<!--            <column name="brand_name" value="BIGINT"/>-->
+            <column name="full_name" value="Товариство з обмеженою відповідальністю Пуп"/>
         </insert>
-
         <insert tableName="LLC">
             <column name="name" value="ТОВ Івоново"/>
             <column name="full_name" value="Товариство з обмеженою відповідальністю Іваново"/>
-<!--            <column name="brand_name" value="BIGINT"/>-->
         </insert>
     </changeSet>
-
-
 
     <changeSet author="Pavel" id="0.0.4">
         <insert tableName="users">

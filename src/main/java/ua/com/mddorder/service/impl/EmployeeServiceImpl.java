@@ -2,6 +2,7 @@ package ua.com.mddorder.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.com.mddorder.dto.RequestEmployeeDto;
 import ua.com.mddorder.dto.ResponseEmployeeDto;
 import ua.com.mddorder.dto.UserDto;
@@ -43,6 +44,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @Transactional
     public Employee findById(Long id) {
         Optional<Employee> optional = employeeRepository.findEmployeeById(id);
         if (optional.isEmpty()) {

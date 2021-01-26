@@ -14,8 +14,9 @@
     <!--    addresses-->
     <!--    LLC-->
     <!--    pharmacies-->
-    <!--    roles-->
     <!--    employees-->
+    <!--    Roles-->
+    <!--    employees_roles-->
     <!--    users-->
 
     <changeSet author="Pavel" id="seq">
@@ -72,13 +73,8 @@
                 <constraints primaryKey="true"/>
             </column>
             <column name="city_index" type="BIGINT"/>
-
-            <!--            <column name="city_index" type="BIGINT">-->
-            <!--                <constraints foreignKeyName="FK_city_indexes_cities" references="cities(id)"/>-->
-            <!--            </column>-->
         </createTable>
     </changeSet>
-
 
     <!--    _________________ countries ____________________________-->
 
@@ -128,7 +124,6 @@
             </column>
             <column name="name" type="VARCHAR(255)"/>
             <column name="full_name" type="VARCHAR(255)"/>
-
             <column name="brand_name" type="BIGINT">
                 <constraints nullable="true" foreignKeyName="FK_LLC_brand_names" references="brand_names(id)"/>
             </column>
@@ -137,14 +132,13 @@
             </column>
         </createTable>
     </changeSet>
+
     <!--    _________________ pharmacies ____________________________-->
 
     <changeSet author="Pavel" id="0.0.9">
         <createTable tableName="pharmacies">
-
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
-
             </column>
             <column name="name" type="VARCHAR(255)"/>
             <column name="LLC_id" type="BIGINT">
@@ -157,16 +151,7 @@
             <column name="password_pharmacy" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <!--    _________________ roles ____________________________-->
 
-    <changeSet author="Pavel" id="create_roles_table">
-        <createTable tableName="roles">
-            <column autoIncrement="true" name="id" type="BIGINT">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="name" type="VARCHAR(255)"/>
-        </createTable>
-    </changeSet>
     <!--    _________________ employees ____________________________-->
 
     <changeSet author="Pavel" id="0.0.10">
@@ -176,21 +161,47 @@
             </column>
             <column name="name" type="VARCHAR(255)"/>
             <column name="surname" type="VARCHAR(255)"/>
-
-            <column name="username" type="VARCHAR(255)"/>
-            <column name="password" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)">
+                <constraints unique="true"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints unique="true"/>
+            </column>
             <column name="enabled" type="BOOL"/>
             <column name="registered" type="timestamp"/>
-            <column name="role_id" type="BIGINT">
-                <constraints foreignKeyName="FK_pharmacies_roles" references="roles(id)"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints unique="true"/>
             </column>
-
-            <column name="email" type="VARCHAR(255)"/>
-
             <column name="pharmacy_id" type="BIGINT">
                 <constraints foreignKeyName="FK_employees_pharmacies" references="pharmacies(id)"/>
             </column>
+        </createTable>
+    </changeSet>
 
+    <!--    _________________ roles ____________________________-->
+
+    <changeSet author="Pavel" id="create_roles_table">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role_type" type="VARCHAR(255)"/>
+            <column name="creation_date" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!--    _________________ employees_roles ____________________________-->
+
+    <changeSet author="Pavel" id="create_employees_roles_table">
+        <createTable tableName="employees_roles">
+            <column name="employee_id" type="BIGINT">
+                <constraints primaryKey="true" foreignKeyName="FK_employees_roles_employees"
+                             references="employees(id)"/>
+            </column>
+            <column name="role_id" type="BIGINT">
+                <constraints primaryKey="true" foreignKeyName="FK_employees_roles_roles"
+                             references="roles(id)"/>
+            </column>
         </createTable>
     </changeSet>
 
@@ -208,33 +219,5 @@
             <column name="password" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-
-
-    <!--    <changeSet author="Pavel" id="0.0.1">-->
-    <!--        <createTable tableName="users">-->
-    <!--            <column autoIncrement="true" name="id" type="BIGINT">-->
-    <!--                <constraints primaryKey="true"/>-->
-    <!--            </column>-->
-    <!--            <column name="first_name" type="VARCHAR(255)"/>-->
-    <!--            <column name="last_name" type="VARCHAR(255)"/>-->
-    <!--            <column name="email" type="VARCHAR(255)"/>-->
-    <!--            <column name="password" type="VARCHAR(255)"/>-->
-    <!--            <column name="creation_date" type="Date"/>-->
-    <!--        </createTable>-->
-    <!--    </changeSet>-->
-
-    <!--    <changeSet author="Pavel" id="007_2_create_tables_roles">-->
-    <!--        <createTable tableName="roles">-->
-    <!--            <column autoIncrement="true" name="id" type="BIGINT">-->
-    <!--                <constraints primaryKey="true"/>-->
-    <!--            </column>-->
-    <!--            <column name="role_type" type="VARCHAR(20)"/>-->
-    <!--            <column name="creation_date" type="TIMESTAMP"/>-->
-    <!--    <column name="user_id" type="int">-->
-    <!--        <constraints nullable="false" foreignKeyName="FK_roles_users" references="users(id)"/>-->
-    <!--    </column>-->
-    <!--        </createTable>-->
-    <!--    </changeSet>-->
-
 
 </databaseChangeLog>

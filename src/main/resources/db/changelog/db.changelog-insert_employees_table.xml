@@ -10,46 +10,29 @@
             <column name="name" value="Pavel"/>
             <column name="surname" value="Ponomarenko"/>
             <column name="username" value="pavel1979"/>
-            <column name="password" value="1111"/>
+            <column name="password" value="$2y$12$nhyiyMy7P8ovWYXTXcGO8euEaOePiUfHSfP73VGsrzjF/LA69n86a"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
-            <column name="role_id" value="4"/>
-
             <column name="email" value="ponomarenko2008@gmail.com"/>
         </insert>
         <insert tableName="employees">
             <column name="name" value="Andrey"/>
             <column name="surname" value="Andreev"/>
             <column name="username" value="andrey1977"/>
-            <column name="password" value="2222"/>
+            <column name="password" value="$2y$12$vW5My5dQuVHMiP318itN0ufK92iBTZtSPGDWkxr8vFDHBG4Q7Wt4y"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
-            <column name="role_id" value="2"/>
             <column name="email" value="andreev@gmail.com"/>
         </insert>
         <insert tableName="employees">
             <column name="name" value="Sergey"/>
             <column name="surname" value="Sergeev"/>
             <column name="username" value="sergey1980"/>
-            <column name="password" value="3333"/>
+            <column name="password" value="$2y$12$L8xOjGGiMqZXAppYuruGLewnWJxIRGFrHTobeXk0vEtTDHlxIR7qu"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
-            <column name="role_id" value="3"/>
             <column name="email" value="sergeev@gmail.com"/>
         </insert>
-        <!--        <insert tableName="employees">-->
-        <!--            <column name="barcode" value="255466"/>-->
-        <!--            <column name="name" value="Молоко 2,5%"/>-->
-        <!--            <column name="price" value="30.5"/>-->
-        <!--        </insert>-->
-
-        <!--        <insert tableName="employees">-->
-        <!--            <column name="barcode" value="255467"/>-->
-        <!--            <column name="name" value="Мінеральна вода"/>-->
-        <!--            <column name="price" value="18.99"/>-->
-        <!--        </insert>-->
-
     </changeSet>
-
 
 </databaseChangeLog>

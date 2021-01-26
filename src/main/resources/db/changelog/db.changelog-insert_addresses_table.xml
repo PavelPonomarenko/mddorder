@@ -5,7 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-
     <changeSet author="Pavel" id="insert_addresses_table">
 
         <insert tableName="addresses">
@@ -15,22 +14,20 @@
             <column name="streets_id" value="1"/>
             <column name="street_numbers" value="1"/>
         </insert>
-<!--        <insert tableName="addresses">-->
-<!--            <column name="name" value="Російська Федерація"/>-->
-<!--            <column name="manufacturer_country_code" value="460"/>-->
-<!--            <column name="country_code_alpha3" value="RUS"/>-->
-<!--            <column name="country_code_number" value="643"/>-->
-<!--        </insert>-->
-<!--        <insert tableName="addresses">-->
-<!--            <column name="name" value="Україна"/>-->
-<!--            <column name="manufacturer_country_code" value="482"/>-->
-<!--            <column name="country_code_alpha3" value="UKR"/>-->
-<!--            <column name="country_code_number" value="804"/>-->
-<!--        </insert>-->
+        <!--        <insert tableName="addresses">-->
+        <!--            <column name="name" value="Російська Федерація"/>-->
+        <!--            <column name="manufacturer_country_code" value="460"/>-->
+        <!--            <column name="country_code_alpha3" value="RUS"/>-->
+        <!--            <column name="country_code_number" value="643"/>-->
+        <!--        </insert>-->
+        <!--        <insert tableName="addresses">-->
+        <!--            <column name="name" value="Україна"/>-->
+        <!--            <column name="manufacturer_country_code" value="482"/>-->
+        <!--            <column name="country_code_alpha3" value="UKR"/>-->
+        <!--            <column name="country_code_number" value="804"/>-->
+        <!--        </insert>-->
 
     </changeSet>
-
-
 
 
 </databaseChangeLog>

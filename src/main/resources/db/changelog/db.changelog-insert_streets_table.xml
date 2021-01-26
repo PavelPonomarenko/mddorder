@@ -15,8 +15,6 @@
         <insert tableName="streets">
             <column name="name" value="Вацлава Гавела"/>
         </insert>
-
     </changeSet>
-
 
 </databaseChangeLog>

@@ -7,6 +7,7 @@ import ua.com.mddorder.repository.EmployeeRepository;
 import ua.com.mddorder.service.AdminService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdminServiceEmployeeImpl implements AdminService<Employee> {
@@ -30,6 +31,10 @@ public class AdminServiceEmployeeImpl implements AdminService<Employee> {
 
     @Override
     public Employee getOne(Long id) {
+        Optional<Employee> optional = employeeRepository.findEmployeeById(id);
+        if (optional.isEmpty()) {
+            throw new IllegalStateException("Employee with id " + id + " does not exists");
+        }
         return employeeRepository.getOne(id);
     }
 }

@@ -13,7 +13,7 @@ import ua.com.mddorder.service.RootCrudService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/admin/brand")
+@RequestMapping(path = "/auth/api/v1/admin/brand")
 public class AdminRestBrandNameController {
 
     private final RootCrudService brandNameService;

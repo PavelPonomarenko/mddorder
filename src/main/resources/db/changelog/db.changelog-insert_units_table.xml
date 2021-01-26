@@ -18,8 +18,6 @@
         <insert tableName="units">
             <column name="name" value="упак."/>
         </insert>
-
     </changeSet>
-
 
 </databaseChangeLog>

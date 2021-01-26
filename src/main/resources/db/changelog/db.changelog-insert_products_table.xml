@@ -5,7 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-
     <changeSet author="Pavel" id="insert_product_table">
         <insert tableName="products">
             <column name="barcode" value="255255"/>
@@ -17,13 +16,11 @@
             <column name="name" value="Молоко 2,5%"/>
             <column name="price" value="30.5"/>
         </insert>
-
         <insert tableName="products">
             <column name="barcode" value="255467"/>
             <column name="name" value="Мінеральна вода"/>
             <column name="price" value="18.99"/>
         </insert>
-
     </changeSet>
 
 </databaseChangeLog>

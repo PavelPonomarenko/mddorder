@@ -25,11 +25,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User addNewUser(User user) {
-
-//        Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
-//        if (userOptional.isPresent()) {
-//            throw new IllegalStateException("email taken");
-//        }
         return userRepository.save(user);
     }
 
@@ -81,6 +76,4 @@ public class UserServiceImpl implements UserService {
         }
         userRepository.deleteUserById(id);
     }
-
-
 }

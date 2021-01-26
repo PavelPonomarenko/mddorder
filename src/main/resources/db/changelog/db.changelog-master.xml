@@ -8,26 +8,20 @@
 
     <include file="db/changelog/db.changelog-0.0.1_ddl.xml"/>
     <include file="db/changelog/db.changelog-0.0.2_ddl.xml"/>
-
     <include file="db/changelog/db.changelog-0.0.3_dml.xml"/>
-
 
     <include file="db/changelog/db.changelog-insert_cities_table.xml"/>
     <include file="db/changelog/db.changelog-insert_city_indexes_table.xml"/>
-
     <include file="db/changelog/db.changelog-insert_countries_table.xml"/>
-
     <include file="db/changelog/db.changelog-insert_street_numbers_table.xml"/>
     <include file="db/changelog/db.changelog-insert_streets_table.xml"/>
-
     <include file="db/changelog/db.changelog-insert_addresses_table.xml"/>
-
     <include file="db/changelog/db.changelog-insert_products_table.xml"/>
     <include file="db/changelog/db.changelog-insert_units_table.xml"/>
     <include file="db/changelog/db.changelog-insert_roles_table.xml"/>
     <include file="db/changelog/db.changelog-insert_order_statuses_table.xml"/>
     <include file="db/changelog/db.changelog-insert_employees_table.xml"/>
-
+    <include file="db/changelog/db.changelog-insert_employees_roles_table.xml"/>
 
 </databaseChangeLog>
 

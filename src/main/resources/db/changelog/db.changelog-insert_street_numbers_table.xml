@@ -15,8 +15,6 @@
         <insert tableName="street_numbers">
             <column name="number" value="12/8"/>
         </insert>
-
     </changeSet>
-
 
 </databaseChangeLog>

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3 ">
 <head>
     <meta charset="UTF-8">
     <title>Admin-page</title>
+    <link rel="stylesheet" th:href="@{/css/private/admin-page.css}"/>
+
 </head>
 <body>
-<header wi>
+<header id="header">
     <h1>Admin</h1>
     <hr>
 </header>
+<div left-side>
+
+</div>
+<div right-side>
+
+
+</div>
 
 <section brand_names>
     <table border="1" cellpadding="8" cellspacing="0">
@@ -62,7 +74,7 @@
             <th>username</th>
             <th>password</th>
             <th>enabled</th>
-            <th>role</th>
+            <th>ERole</th>
             <th>email</th>
             <th>pharmacy</th>
         </tr>
@@ -82,7 +94,7 @@
     <hr>
 </section>
 
-<footer>
+<footer id="footer">
     <hr>
     <h2>F O O T E R</h2>
     <hr>

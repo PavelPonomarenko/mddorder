@@ -12,7 +12,7 @@ import ua.com.mddorder.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/user/")
+@RequestMapping(value = "/auth/api/v1/user/")
 public class UserRestController {
 
     private final UserService userService;

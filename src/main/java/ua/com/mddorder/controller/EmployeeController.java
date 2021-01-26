@@ -14,8 +14,9 @@ import ua.com.mddorder.service.EmployeeService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/employee/")
+@RequestMapping(path = "/auth/api/v1/employee/")
 public class EmployeeController {
+
     private final EmployeeService employeeService;
 
     @Autowired
@@ -32,7 +33,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeesDto, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "{id}")
     public ResponseEntity<ResponseEmployeeDto> getEmployeeById(@PathVariable(name = "id") Long id) {
         Employee employee = employeeService.findById(id);
         if (employee == null) {
@@ -40,10 +41,5 @@ public class EmployeeController {
         }
         ResponseEmployeeDto response = ResponseEmployeeDto.fromEmployeeToResponseEmployeeDto(employee);
         return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
-    @GetMapping
-    public String getProfile() {
-        return "login";
     }
 }

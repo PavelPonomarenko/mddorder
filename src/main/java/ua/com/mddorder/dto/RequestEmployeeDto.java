@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ua.com.mddorder.model.Employee;
-import ua.com.mddorder.model.User;
 
 @Data
 @ToString

@@ -36,19 +36,15 @@
         <insert tableName="cities">
             <column name="name" value="Одеса"/>
         </insert>
-
         <insert tableName="cities">
             <column name="name" value="Полтава"/>
         </insert>
-
         <insert tableName="cities">
             <column name="name" value="Ужгород"/>
         </insert>
-
         <insert tableName="cities">
             <column name="name" value="Кропивницький"/>
         </insert>
-
         <insert tableName="cities">
             <column name="name" value="Тернопіль"/>
         </insert>
@@ -79,10 +75,6 @@
         <insert tableName="cities">
             <column name="name" value="Сімферополь"/>
         </insert>
-<!--        <insert tableName="cities">-->
-<!--            <column name="name" value=""/>-->
-<!--        </insert>-->
     </changeSet>
-
 
 </databaseChangeLog>
