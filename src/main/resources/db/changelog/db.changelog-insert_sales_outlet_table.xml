@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="insert_sales_outlet_table">
+        <insert tableName="sales_outlet">
+            <column name="name" value="Аптека155"/>
+            <column name="address_id" value="1"/>
+            <column name="outlets_classification_id" value="7"/>
+            <column name="сommodity_specialization_id" value="1"/>
+            <column name="LLC_id" value="2"/>
+            <column name="email_sales_outlet" value="pharmacy155@ukr.net"/>
+            <column name="password_sales_outlet"
+                    value="$2y$12$R4NAZLE0AwdRfh1ExhDDQuMqBTTk7Q8iiM6c/ynNODtvSIy9lCMTq"/>
+            <!-- password -> 155 -->
+        </insert>
+
+        <insert tableName="sales_outlet">
+            <column name="name" value="Аптека215"/>
+            <column name="address_id" value="1"/>
+            <column name="outlets_classification_id" value="7"/>
+            <column name="сommodity_specialization_id" value="1"/>
+            <column name="LLC_id" value="2"/>
+            <column name="email_sales_outlet" value="pharmacy215@ukr.net"/>
+            <column name="password_sales_outlet"
+                    value="$2y$12$gfs/qeoARGCO3J2o.sTL9u/LykDeBS394r/vL5e1V3irdEtBV2dpq"/>
+            <!-- password -> 215 -->
+        </insert>
+        <insert tableName="sales_outlet">
+            <column name="name" value="Аптека320"/>
+            <column name="address_id" value="1"/>
+            <column name="outlets_classification_id" value="7"/>
+            <column name="сommodity_specialization_id" value="1"/>
+            <column name="LLC_id" value="2"/>
+            <column name="email_sales_outlet" value="pharmacy320@ukr.net"/>
+            <column name="password_sales_outlet"
+                    value="$2y$12$mQwno7hkjVzuMMMqWsqXWeusE9PPk67c5QEaj0gL3dkTnrs6aLpm."/>
+            <!-- password -> 320 -->
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

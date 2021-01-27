@@ -14,6 +14,7 @@
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
             <column name="email" value="ponomarenko2008@gmail.com"/>
+            <column name="sales_outlet_id" value="1"/>
         </insert>
         <insert tableName="employees">
             <column name="name" value="Andrey"/>
@@ -23,6 +24,8 @@
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
             <column name="email" value="andreev@gmail.com"/>
+            <column name="sales_outlet_id" value="1"/>
+
         </insert>
         <insert tableName="employees">
             <column name="name" value="Sergey"/>
@@ -32,6 +35,8 @@
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
             <column name="email" value="sergeev@gmail.com"/>
+            <column name="sales_outlet_id" value="1"/>
+
         </insert>
     </changeSet>
 

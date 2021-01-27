@@ -13,7 +13,9 @@
     <!--    countries-->
     <!--    addresses-->
     <!--    LLC-->
-    <!--    pharmacies-->
+    <!--    outlets_classification-->
+    <!--    сommodity_specialization-->
+    <!--    sales_outlet-->
     <!--    employees-->
     <!--    Roles-->
     <!--    employees_roles-->
@@ -83,10 +85,12 @@
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(255)"/>
-            <column name="manufacturer_country_code" type="INT"/>
+            <column name="short_name" type="VARCHAR(255)"/>
+            <column name="official_name" type="VARCHAR(255)"/>
+            <column name="country_code_alpha2" type="VARCHAR(255)"/>
             <column name="country_code_alpha3" type="VARCHAR(255)"/>
             <column name="country_code_number" type="BIGINT"/>
+            <column name="manufacturer_country_code" type="INT"/>
         </createTable>
     </changeSet>
 
@@ -133,22 +137,62 @@
         </createTable>
     </changeSet>
 
-    <!--    _________________ pharmacies ____________________________-->
+    <!--    _________________ outlets_classification ____________________________-->
 
-    <changeSet author="Pavel" id="0.0.9">
-        <createTable tableName="pharmacies">
+    <changeSet author="Pavel" id="0.0.11">
+        <createTable tableName="outlets_classification">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
             </column>
             <column name="name" type="VARCHAR(255)"/>
-            <column name="LLC_id" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="FK_pharmacies_LLC" references="LLC(id)"/>
+        </createTable>
+    </changeSet>
+    <!--    _________________ сommodity_specialization ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.12">
+        <createTable tableName="сommodity_specialization">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
             </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+
+    <!--    _________________ sales_outlet ____________________________-->
+
+    <changeSet author="Pavel" id="0.0.9">
+        <createTable tableName="sales_outlet">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+
             <column name="address_id" type="BIGINT">
-                <constraints foreignKeyName="FK_pharmacies_addresses" references="addresses(id)"/>
+                <constraints foreignKeyName="FK_sales_outlet_addresses" references="addresses(id)"/>
             </column>
-            <column name="email_pharmacy" type="VARCHAR(255)"/>
-            <column name="password_pharmacy" type="VARCHAR(255)"/>
+            <column name="outlets_classification_id" type="BIGINT">
+                <constraints foreignKeyName="FK_sales_outlet_outlets_outlets_classification"
+                             references="outlets_classification(id)"/>
+            </column>
+
+            <column name="сommodity_specialization_id" type="BIGINT">
+                <constraints foreignKeyName="FK_sales_outlet_сommodity_specialization"
+                             references="сommodity_specialization(id)"/>
+            </column>
+
+
+            <column name="LLC_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="FK_sales_outlet_LLC" references="LLC(id)"/>
+            </column>
+
+            <column name="email_sales_outlet" type="VARCHAR(255)">
+                <constraints unique="true"/>
+            </column>
+
+            <column name="password_sales_outlet" type="VARCHAR(255)">
+                <constraints unique="true"/>
+            </column>
         </createTable>
     </changeSet>
 
@@ -172,8 +216,9 @@
             <column name="email" type="VARCHAR(255)">
                 <constraints unique="true"/>
             </column>
-            <column name="pharmacy_id" type="BIGINT">
-                <constraints foreignKeyName="FK_employees_pharmacies" references="pharmacies(id)"/>
+            <column name="sales_outlet_id" type="BIGINT">
+                <constraints foreignKeyName="FK_employees_sales_outlet" references="sales_outlet(id)"
+                             nullable="false"/>
             </column>
         </createTable>
     </changeSet>

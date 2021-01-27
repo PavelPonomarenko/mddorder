@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="insert_outlets_classification_table">
+        <insert tableName="outlets_classification">
+            <column name="name" value="гіпермаркет"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="супермаркет"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="універсам"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="кеш енд кері"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="Дискаунтер"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="магазин біля дому"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="Спеціалізований магазин"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="Кіоск"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="Павільйон"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="Бутік"/>
+        </insert>
+        <insert tableName="outlets_classification">
+            <column name="name" value="інтернет-магазин"/>
+        </insert>
+        <!--        <insert tableName="outlets_classification">-->
+        <!--            <column name="name" value=""/>-->
+        <!--        </insert>-->
+    </changeSet>
+
+</databaseChangeLog>

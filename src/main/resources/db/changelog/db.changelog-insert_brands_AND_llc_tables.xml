@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!--    _________________ brand_names ____________________________-->
+
+    <changeSet author="Pavel" id="insert_brand_names_table">
+        <insert tableName="brand_names">
+            <column name="name" value="АНЦ"/>
+            <column name="full_name" value="Кока-Кола"/>
+        </insert>
+        <insert tableName="brand_names">
+            <column name="name" value="АДД"/>
+            <column name="full_name" value="Пепсі"/>
+        </insert>
+    </changeSet>
+
+    <!--    _________________ LLC ____________________________-->
+
+    <changeSet author="Pavel" id="insert_LLC_table">
+        <insert tableName="LLC">
+            <column name="name" value="ТОВ ПУП"/>
+            <column name="full_name" value="Товариство з обмеженою відповідальністю Пуп"/>
+        </insert>
+        <insert tableName="LLC">
+            <column name="name" value="ТОВ Івоново"/>
+            <column name="full_name" value="Товариство з обмеженою відповідальністю Іваново"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pavel" id="insert_сommodity_specialization_table">
+        <insert tableName="сommodity_specialization">
+            <column name="name" value="Фармацевтичні товари"/>
+        </insert>
+        <insert tableName="сommodity_specialization">
+            <column name="name" value="Продовольчі товари"/>
+        </insert>
+        <insert tableName="сommodity_specialization">
+            <column name="name" value="Непродовольчі товари"/>
+        </insert>
+        <insert tableName="сommodity_specialization">
+            <column name="name" value="Канцелярські товари"/>
+        </insert>
+<!--        <insert tableName="сommodity_specialization">-->
+        <!--            <column name="name" value=""/>-->
+        <!--        </insert>-->
+        <!--        <insert tableName="сommodity_specialization">-->
+        <!--            <column name="name" value=""/>-->
+        <!--        </insert>-->
+    </changeSet>
+
+</databaseChangeLog>

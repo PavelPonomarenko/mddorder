@@ -12,9 +12,9 @@
         <insert tableName="order_statuses">
             <column name="name" value="ВІДПРАВЛЯТИ"/>
         </insert>
-        <insert tableName="order_statuses">
-            <column name="name" value=""/>
-        </insert>
+<!--        <insert tableName="order_statuses">-->
+<!--            <column name="name" value=""/>-->
+<!--        </insert>-->
         <insert tableName="order_statuses">
             <column name="name" value="РЕЗЕРВ"/>
         </insert>

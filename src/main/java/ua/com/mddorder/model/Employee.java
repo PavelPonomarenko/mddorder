@@ -65,8 +65,8 @@ public class Employee {
     @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "pharmacy_id")
-    private Long pharmacity;
+    @Column(name = "sales_outlet_id", nullable = false)
+    private Long salesOutlet;
 
     @ManyToMany
     @JoinTable(name = "employees_roles",

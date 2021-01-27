@@ -8,22 +8,45 @@
     <changeSet author="Pavel" id="insert_countries_table">
 
         <insert tableName="countries">
-            <column name="name" value="Німеччина"/>
-            <column name="manufacturer_country_code" value="400"/>
-            <column name="country_code_alpha3" value="DEU"/>
-            <column name="country_code_number" value="276"/>
-        </insert>
-        <insert tableName="countries">
-            <column name="name" value="Російська Федерація"/>
-            <column name="manufacturer_country_code" value="460"/>
-            <column name="country_code_alpha3" value="RUS"/>
-            <column name="country_code_number" value="643"/>
-        </insert>
-        <insert tableName="countries">
-            <column name="name" value="Україна"/>
-            <column name="manufacturer_country_code" value="482"/>
+            <column name="short_name" value="Україна"/>
+            <column name="official_name" value="Україна"/>
+            <column name="country_code_alpha2" value="UA"/>
             <column name="country_code_alpha3" value="UKR"/>
             <column name="country_code_number" value="804"/>
+            <column name="manufacturer_country_code" value="482"/>
+        </insert>
+        <insert tableName="countries">
+            <column name="short_name" value="Німеччина"/>
+            <column name="official_name" value="Федеративна Республіка Німеччина"/>
+            <column name="country_code_alpha2" value="DE"/>
+            <column name="country_code_alpha3" value="DEU"/>
+            <column name="country_code_number" value="276"/>
+            <column name="manufacturer_country_code" value="400"/>
+        </insert>
+        <insert tableName="countries">
+            <column name="short_name" value="Туреччина"/>
+            <column name="official_name" value="Республіка Туреччина"/>
+            <column name="country_code_alpha2" value="TR"/>
+            <column name="country_code_alpha3" value="TUR"/>
+            <column name="country_code_number" value="792"/>
+            <column name="manufacturer_country_code" value="868"/>
+        </insert>
+
+        <insert tableName="countries">
+            <column name="short_name" value="Російська Федерація"/>
+            <column name="official_name" value="Російська Федерація"/>
+            <column name="country_code_alpha2" value="RU"/>
+            <column name="country_code_alpha3" value="RUS"/>
+            <column name="country_code_number" value="643"/>
+            <column name="manufacturer_country_code" value="460"/>
+        </insert>
+        <insert tableName="countries">
+            <column name="short_name" value="Білорусь"/>
+            <column name="official_name" value="Республіка Білорусь"/>
+            <column name="manufacturer_country_code" value="400"/>
+            <column name="country_code_alpha2" value="BY"/>
+            <column name="country_code_alpha3" value="BLR"/>
+            <column name="country_code_number" value="112"/>
         </insert>
     </changeSet>
 
