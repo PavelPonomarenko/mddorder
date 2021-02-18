@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>superadmin</title>
+</head>
+<body>
+
+<div th:fragment="header">
+    <div class="row p-3 mb-2 bg-warning text-dark ">
+        <div class="col-sm ">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid ">
+                    <a class="navbar-brand" href="/">Вибрана ентіті</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/userList">
+                                    <button type="button" class="btn btn-success">Показати список</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">
+                                    <button type="button" class="btn btn-success">Видалити</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">
+                                    <button type="button" class="btn btn-success">Створити новий</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">
+                                    <button type="button" class="btn btn-success">Змінити</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</div>
+
+<div th:fragment="leftmenu">
+<!--    <div class="row p-3 mb-2 bg-warning text-dark ">-->
+        <div class="col-6 col-sm-3 bg-secondary align-self-start">
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/userList">
+                        <button type="button " class="btn btn-success">Address</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/brand-name">
+                        <button type="button" class="btn btn-success">Brand name</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">City</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">City index</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Country</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Employee</button>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Employee</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">LLC</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Order</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Outlet clasification</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Product</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Role</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Sale outlet</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Street namber</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Street</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Unit</button>
+                    </a>
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">Commodity specialization</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <button type="button" class="btn btn-success">*****</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+<!--</div>-->
+
+<div th:fragment="footer">
+    <div class="row p-3 mb-2 bg-warning text-dark border border-danger">
+        <div class="col-sm mt-3">
+            <p class="text-danger">footer</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

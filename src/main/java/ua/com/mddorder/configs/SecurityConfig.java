@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import ua.com.mddorder.security.UserDetailsServiceImpl;
 
 @Configuration
-@EnableWebSecurity(debug = true)
+//@EnableWebSecurity(debug = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private UserDetailsServiceImpl userDetailsService;
@@ -30,9 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/public/**").permitAll()
                 .antMatchers("/css/private/**").authenticated()
                 .antMatchers("/*.html", "/*.css", "/*.js").permitAll()
-                .antMatchers("/", "/login").permitAll()
-                .antMatchers("/auth/api/v1/admin/**").hasRole("ADMIN")
-                .antMatchers("/auth/api/v1/employee/**").hasRole("EMPLOYEE")
+                .antMatchers("/", "/login", "/logout").permitAll()
+                .antMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                .antMatchers("/api/v1/admin/sa/**").hasRole("SUPERADMIN")
+                .antMatchers("/api/v1/employee/**").hasRole("EMPLOYEE")
                 .and()
                 .csrf().disable()
                 .formLogin()

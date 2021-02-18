@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>brand-name-form</title>
+</head>
+<body>
+
+
+<div align="center">
+    <form action="#" th:action="@{/api/v1/sa/brand/create}" th:object="${brandName}" method="post">
+
+
+        <!--                <td><label th:text="#{brandNmae.name}"/></td>-->
+        <label>name:</label>
+        <input type="text" th:field="*{name}"/>
+        <br/>
+
+        <!--                <td><label th:text="#{brandNmae.fullName}"/></td>-->
+        <label>Full name:</label>
+        <input type="text" th:field="*{fullName}"/>
+        <br/>
+        <button type="submit">Submit</button>
+        <td></td>
+
+
+    </form>
+
+
+</div>
+
+
+</body>
+</html>

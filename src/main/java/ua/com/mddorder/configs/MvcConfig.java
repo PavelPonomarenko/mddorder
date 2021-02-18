@@ -11,7 +11,20 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("login");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/logout").setViewName("logout");
-        registry.addViewController("/admin-page").setViewName("admin-page");
+        registry.addViewController("/hello").setViewName("hello");
+        registry.addViewController("/home").setViewName("home");
+        registry.addViewController("/userList").setViewName("userList");
+        registry.addViewController("/profile-employee").setViewName("profile-employee");
+        registry.addViewController("/profile-admin").setViewName("profile-admin");
+        registry.addViewController("/profile-super-admin").setViewName("profile-super-admin");
+        registry.addViewController("/brand-name").setViewName("brand-name");
+        registry.addViewController("/brand-name-form").setViewName("brand-name-form");
+        registry.addViewController("/index").setViewName("index");
     }
 
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/css/**")
+//                .addResourceLocations("/css/");
+//    }
 }

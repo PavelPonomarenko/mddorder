@@ -1,4 +1,4 @@
-package ua.com.mddorder.controller.admin;
+package ua.com.mddorder.rest.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ import ua.com.mddorder.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/auth/api/v1/admin/")
+@RequestMapping(path = "/api/v1/admin/users")
 public class AdminRestUserController {
 
     private final UserService userService;
@@ -29,7 +29,7 @@ public class AdminRestUserController {
         this.userService = userService;
     }
 
-    @RequestMapping("user/all")
+    @RequestMapping("/all")
     public ResponseEntity<List<UserDto>> getAllUser() {
         List<UserDto> userDtoList = userService.getAll();
         if (userDtoList == null) {
@@ -38,7 +38,7 @@ public class AdminRestUserController {
         return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
 
-    @GetMapping(value = "user/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id) {
         User user = userService.findById(id);
         if (user == null) {
@@ -48,12 +48,12 @@ public class AdminRestUserController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "user/delete/{id}")
+    @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable("id") Long userId) {
         userService.delete(userId);
     }
 
-    @PostMapping(path = "user/add")
+    @PostMapping(path = "/add")
     public void registerNewUser(@RequestBody User user) {
         userService.addNewUser(user);
     }

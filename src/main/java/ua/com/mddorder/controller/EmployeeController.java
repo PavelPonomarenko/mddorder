@@ -14,7 +14,7 @@ import ua.com.mddorder.service.EmployeeService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/auth/api/v1/employee/")
+@RequestMapping(path = "/api/v1/employee/")
 public class EmployeeController {
 
     private final EmployeeService employeeService;

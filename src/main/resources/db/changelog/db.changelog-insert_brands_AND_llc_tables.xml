@@ -29,6 +29,10 @@
             <column name="name" value="ТОВ Івоново"/>
             <column name="full_name" value="Товариство з обмеженою відповідальністю Іваново"/>
         </insert>
+        <insert tableName="LLC">
+            <column name="name" value="ТОВ Своя Компанія"/>
+            <column name="full_name" value="Товариство з обмеженою відповідальністю Своя Компанія"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

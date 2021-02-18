@@ -1,4 +1,4 @@
-package ua.com.mddorder.controller.admin;
+package ua.com.mddorder.rest.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import ua.com.mddorder.service.AdminService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/auth/api/v1/admin/")
+@RequestMapping(path = "/api/v1/admin/employee")
 public class AdminRestEmployeeController {
 
     private final AdminService adminService;
@@ -26,7 +26,7 @@ public class AdminRestEmployeeController {
         this.adminService = adminService;
     }
 
-    @RequestMapping("employee/all")
+    @RequestMapping("/all")
     public ResponseEntity<List<Employee>> getAll() {
         List<Employee> employees = adminService.getAll();
         if (employees == null) {
@@ -35,7 +35,7 @@ public class AdminRestEmployeeController {
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
-    @PostMapping(path = "employee/add")
+    @PostMapping(path = "/add")
     public ResponseEntity<Employee> save(@RequestBody Employee employee) {
 
         Employee saveEmployee = (Employee) adminService.add(employee);
@@ -45,7 +45,7 @@ public class AdminRestEmployeeController {
         return new ResponseEntity<>(saveEmployee, HttpStatus.CREATED);
     }
 
-    @GetMapping(path = "employee/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "id") Long id) {
         Employee employee = adminService.getOne(id);
         if (employee == null) {

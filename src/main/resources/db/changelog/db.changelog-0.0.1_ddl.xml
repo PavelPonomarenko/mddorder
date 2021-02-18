@@ -167,7 +167,6 @@
                 <constraints primaryKey="true"/>
             </column>
             <column name="name" type="VARCHAR(255)"/>
-
             <column name="address_id" type="BIGINT">
                 <constraints foreignKeyName="FK_sales_outlet_addresses" references="addresses(id)"/>
             </column>
@@ -175,21 +174,16 @@
                 <constraints foreignKeyName="FK_sales_outlet_outlets_outlets_classification"
                              references="outlets_classification(id)"/>
             </column>
-
             <column name="сommodity_specialization_id" type="BIGINT">
                 <constraints foreignKeyName="FK_sales_outlet_сommodity_specialization"
                              references="сommodity_specialization(id)"/>
             </column>
-
-
             <column name="LLC_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="FK_sales_outlet_LLC" references="LLC(id)"/>
             </column>
-
             <column name="email_sales_outlet" type="VARCHAR(255)">
                 <constraints unique="true"/>
             </column>
-
             <column name="password_sales_outlet" type="VARCHAR(255)">
                 <constraints unique="true"/>
             </column>
@@ -217,8 +211,9 @@
                 <constraints unique="true"/>
             </column>
             <column name="sales_outlet_id" type="BIGINT">
-                <constraints foreignKeyName="FK_employees_sales_outlet" references="sales_outlet(id)"
-                             nullable="false"/>
+                <constraints foreignKeyName="FK_employees_sales_outlet"
+                             references="sales_outlet(id)"/>
+                <!--                nullable="false-->
             </column>
         </createTable>
     </changeSet>

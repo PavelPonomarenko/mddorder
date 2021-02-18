@@ -22,6 +22,10 @@
             <column name="employee_id" value="3"/>
             <column name="role_id" value="2"/>
         </insert>
+        <insert tableName="employees_roles">
+            <column name="employee_id" value="4"/>
+            <column name="role_id" value="4"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

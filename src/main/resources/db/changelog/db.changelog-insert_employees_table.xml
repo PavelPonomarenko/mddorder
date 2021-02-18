@@ -38,6 +38,17 @@
             <column name="sales_outlet_id" value="1"/>
 
         </insert>
+        <insert tableName="employees">
+            <column name="name" value="Taras"/>
+            <column name="surname" value="Shevchenko"/>
+            <column name="username" value="taras1850"/>
+            <column name="password" value="$2y$12$a29dJ6ohjnYqLu.ttLH64OOlmEzh.WB5BNBZXU0QEM5mn4rw6sJsC"/>
+            <column name="enabled" value="true"/>
+            <column name="registered" valueDate="now()"/>
+            <column name="email" value="ponomarenko.kyiv@gmail.com"/>
+<!--            <column name="sales_outlet_id" value=""/>-->
+
+        </insert>
     </changeSet>
 
 </databaseChangeLog>
