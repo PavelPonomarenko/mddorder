@@ -16,7 +16,7 @@ public interface BrandNameRepository extends JpaRepository<BrandName, Long> {
     BrandName getOne(Long aLong);
 
 
-    @Transactional
+//    @Transactional
     @Modifying
     @Query("DELETE FROM BrandName u WHERE u.id=?1")
     void deleteOne(@Param("id") Long id);

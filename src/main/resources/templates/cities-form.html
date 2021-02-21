@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cities</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container fluid mt-2 bg-light">
+    <div class="row">
+
+        <div class="col col-lg-3 border border-primary ">
+            <div>
+                <h5>create city </h5>
+                <form th:action="@{/api/v1/admin/super/controller/city/create}" th:object="${city}" method="post">
+                    <p><label>Name:</label>
+                        <input type="text" th:field="*{name}" placeholder="назва"/>
+                    </p>
+                    <p><input type="submit" value="add city"></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="col border border-primary ">
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th><a class="btn btn-primary">update</a></th>
+                    <th><a class="btn btn-danger">delete</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${cities.empty}">
+                    <td colspan="4">No cities</td>
+                </tr>
+                <tr th:each="city : ${cities}">
+                    <td th:text="${city.id}">id</td>
+                    <td th:text="${city.name}">name</td>
+                </tr>
+                </tbody>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+</html>

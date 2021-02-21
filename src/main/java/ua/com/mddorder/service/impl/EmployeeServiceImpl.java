@@ -15,17 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class EmployeeServiceImpl implements EmployeeService {
+//@Service
+public class EmployeeServiceImpl {
 
     private final EmployeeRepository employeeRepository;
 
-    @Autowired
+//    @Autowired
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
-    @Override
+//    @Override
     public List<ResponseEmployeeDto> getAll() {
         List<Employee> employees = employeeRepository.findAll();
         List<ResponseEmployeeDto> responseEmployeeDtoList = new ArrayList<>();
@@ -38,12 +38,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         return responseEmployeeDtoList;
     }
 
-    @Override
+//    @Override
     public Employee findByUsername(String username) {
         return null;
     }
 
-    @Override
+//    @Override
     @Transactional
     public Employee findById(Long id) {
         Optional<Employee> optional = employeeRepository.findEmployeeById(id);
@@ -53,7 +53,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.getOne(id);
     }
 
-    @Override
+//    @Override
     public Employee addNewEmployee(Employee employee) {
         Optional<Employee> userOptional = employeeRepository.findEmployeeByEmail(employee.getEmail());
         if (userOptional.isPresent()) {

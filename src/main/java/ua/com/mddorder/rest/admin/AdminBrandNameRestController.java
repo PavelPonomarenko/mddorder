@@ -17,14 +17,13 @@ import ua.com.mddorder.service.BrandNameService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/admin/sa/brand_names")
-public class SuperAdminBrandController {
+@RequestMapping(path = "/api/v1/admin/super/brandnames")
+public class AdminBrandNameRestController {
 
     private final BrandNameService brandNameService;
 
     @Autowired
-//    @Qualifier("BrandNameAdminServiceImpl")
-    public SuperAdminBrandController(BrandNameService brandNameService) {
+    public AdminBrandNameRestController(BrandNameService brandNameService) {
         this.brandNameService = brandNameService;
     }
 
@@ -37,7 +36,7 @@ public class SuperAdminBrandController {
         return new ResponseEntity<>(brandNameList, HttpStatus.OK);
     }
 
-    @GetMapping(value = "brand_names/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<BrandName> getUserById(@PathVariable(name = "id") Long id) {
         BrandName result = brandNameService.findById(id);
         if (result == null) {
@@ -46,13 +45,13 @@ public class SuperAdminBrandController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "brand_names/delete/{id}")
+    @DeleteMapping(path = "/delete/{id}")
     public void delete(@PathVariable("id") Long brandNameId) {
         brandNameService.deleteOne(brandNameId);
     }
 
 
-    @PostMapping(path = "brand_names/add")
+    @PostMapping(path = "/add")
     public void registerNewUser(@RequestBody BrandName brandName) {
         brandNameService.save(brandName);
     }

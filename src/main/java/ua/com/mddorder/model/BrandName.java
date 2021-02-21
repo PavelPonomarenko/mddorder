@@ -15,29 +15,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+//import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@EqualsAndHashCode
+//@EqualsAndHashCode(of = "id")
 @Access(AccessType.FIELD)
+@Entity
 @Table(name = "brand_names")
 public class BrandName {
 
+
+    //    @SequenceGenerator(
+//            name = "brandName_sequence",
+//            sequenceName = "brandName_sequence",
+//            allocationSize = 1)
+//    @Id
+//    @GeneratedValue(
+//            strategy = GenerationType.SEQUENCE,
+//            generator = "brandName_sequence")
     @Id
-    @SequenceGenerator(
-            name = "brandName_sequence",
-            sequenceName = "brandName_sequence",
-            allocationSize = 1)
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "brandName_sequence")
-    protected Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
 
     @Column(name = "name")
     private String name;
@@ -46,3 +52,4 @@ public class BrandName {
     private String fullName;
 
 }
+

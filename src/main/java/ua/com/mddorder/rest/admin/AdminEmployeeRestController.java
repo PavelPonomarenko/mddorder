@@ -9,26 +9,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import ua.com.mddorder.model.Employee;
-import ua.com.mddorder.service.AdminService;
+import ua.com.mddorder.service.EmployeeService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/admin/employee")
-public class AdminRestEmployeeController {
+@RequestMapping(path = "/api/v1/admin/super/employee")
+public class AdminEmployeeRestController {
 
-    private final AdminService adminService;
+    private final EmployeeService employeeService;
 
     @Autowired
-    public AdminRestEmployeeController(AdminService adminService) {
-        this.adminService = adminService;
+    public AdminEmployeeRestController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     @RequestMapping("/all")
     public ResponseEntity<List<Employee>> getAll() {
-        List<Employee> employees = adminService.getAll();
+        List<Employee> employees = employeeService.getAll();
         if (employees == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -38,7 +37,7 @@ public class AdminRestEmployeeController {
     @PostMapping(path = "/add")
     public ResponseEntity<Employee> save(@RequestBody Employee employee) {
 
-        Employee saveEmployee = (Employee) adminService.add(employee);
+        Employee saveEmployee = employeeService.add(employee);
         if (saveEmployee == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -47,7 +46,7 @@ public class AdminRestEmployeeController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "id") Long id) {
-        Employee employee = adminService.getOne(id);
+        Employee employee = employeeService.getOne(id);
         if (employee == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

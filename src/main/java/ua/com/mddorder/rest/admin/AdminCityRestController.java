@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ua.com.mddorder.model.City;
-import ua.com.mddorder.service.adminservice.CityAdminService;
+import ua.com.mddorder.service.CityService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/admin/sa/city")
-public class SuperAdminCityController {
+@RequestMapping(path = "/api/v1/admin/super/city")
+public class AdminCityRestController {
 
-    private final CityAdminService cityService;
+    private final CityService cityService;
 
     @Autowired
-    public SuperAdminCityController(CityAdminService cityService) {
+    public AdminCityRestController(CityService cityService) {
         this.cityService = cityService;
     }
 
@@ -40,6 +40,20 @@ public class SuperAdminCityController {
         }
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
-
+//
+//    @PostMapping(path = "/create")
+//    public ResponseEntity<City> save(@RequestBody City city) {
+//
+//        City result = cityService.add(city);
+//        if (result == null) {
+//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//        }
+//        return new ResponseEntity<>(result, HttpStatus.CREATED);
+//    }
+//
+//    @DeleteMapping(path = "/delete/{id}")
+//    public void delete(@PathVariable("id") Long cityId) {
+//        cityService.deleteOne(cityId);
+//    }
 
 }

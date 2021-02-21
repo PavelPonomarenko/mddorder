@@ -19,17 +19,17 @@ import ua.com.mddorder.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/v1/admin/users")
-public class AdminRestUserController {
+@RequestMapping(path = "/api/v1/admin/super/")
+public class AdminUserRestController {
 
     private final UserService userService;
 
     @Autowired
-    public AdminRestUserController(UserService userService) {
+    public AdminUserRestController(UserService userService) {
         this.userService = userService;
     }
 
-    @RequestMapping("/all")
+    @RequestMapping("users/all")
     public ResponseEntity<List<UserDto>> getAllUser() {
         List<UserDto> userDtoList = userService.getAll();
         if (userDtoList == null) {
@@ -38,7 +38,7 @@ public class AdminRestUserController {
         return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "users/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id) {
         User user = userService.findById(id);
         if (user == null) {
@@ -48,17 +48,17 @@ public class AdminRestUserController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "/delete/{id}")
+    @DeleteMapping(path = "users/delete/{id}")
     public void delete(@PathVariable("id") Long userId) {
         userService.delete(userId);
     }
 
-    @PostMapping(path = "/add")
+    @PostMapping(path = "users/add")
     public void registerNewUser(@RequestBody User user) {
         userService.addNewUser(user);
     }
 
-    @PutMapping(path = "user/update/{id}")
+    @PutMapping(path = "users/update/{id}")
     public void update(@PathVariable Long id,
                        @RequestParam(required = false) String username,
                        @RequestParam(required = false) String email) {

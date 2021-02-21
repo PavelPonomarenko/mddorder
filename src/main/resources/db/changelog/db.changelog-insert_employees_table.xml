@@ -9,7 +9,7 @@
         <insert tableName="employees">
             <column name="name" value="Pavel"/>
             <column name="surname" value="Ponomarenko"/>
-            <column name="username" value="pavel1979"/>
+            <column name="username" value="admin1111"/>
             <column name="password" value="$2y$12$nhyiyMy7P8ovWYXTXcGO8euEaOePiUfHSfP73VGsrzjF/LA69n86a"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
@@ -19,7 +19,7 @@
         <insert tableName="employees">
             <column name="name" value="Andrey"/>
             <column name="surname" value="Andreev"/>
-            <column name="username" value="andrey1977"/>
+            <column name="username" value="user2222"/>
             <column name="password" value="$2y$12$vW5My5dQuVHMiP318itN0ufK92iBTZtSPGDWkxr8vFDHBG4Q7Wt4y"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
@@ -30,7 +30,7 @@
         <insert tableName="employees">
             <column name="name" value="Sergey"/>
             <column name="surname" value="Sergeev"/>
-            <column name="username" value="sergey1980"/>
+            <column name="username" value="user3333"/>
             <column name="password" value="$2y$12$L8xOjGGiMqZXAppYuruGLewnWJxIRGFrHTobeXk0vEtTDHlxIR7qu"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
@@ -41,13 +41,11 @@
         <insert tableName="employees">
             <column name="name" value="Taras"/>
             <column name="surname" value="Shevchenko"/>
-            <column name="username" value="taras1850"/>
+            <column name="username" value="superadmin4444"/>
             <column name="password" value="$2y$12$a29dJ6ohjnYqLu.ttLH64OOlmEzh.WB5BNBZXU0QEM5mn4rw6sJsC"/>
             <column name="enabled" value="true"/>
             <column name="registered" valueDate="now()"/>
             <column name="email" value="ponomarenko.kyiv@gmail.com"/>
-<!--            <column name="sales_outlet_id" value=""/>-->
-
         </insert>
     </changeSet>
 

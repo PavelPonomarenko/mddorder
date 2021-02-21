@@ -10,15 +10,12 @@ import ua.com.mddorder.service.BrandNameService;
 import java.util.List;
 
 @Service
-@Qualifier("BrandNameAdminServiceImpl")
-
-public class BrandNameAdminServiceImpl implements BrandNameService {
-
+public class AdminBrandNameServiceImpl implements BrandNameService {
 
     private final BrandNameRepository brandNameRepository;
 
     @Autowired
-    public BrandNameAdminServiceImpl(BrandNameRepository brandNameRepository) {
+    public AdminBrandNameServiceImpl(BrandNameRepository brandNameRepository) {
         this.brandNameRepository = brandNameRepository;
     }
 
@@ -35,12 +32,12 @@ public class BrandNameAdminServiceImpl implements BrandNameService {
 
     @Override
     public List getAll() {
-        return null;
+        return brandNameRepository.findAll();
     }
 
     @Override
     public BrandName findById(Long id) {
-        return null;
+        return brandNameRepository.getOne(id);
     }
 
     @Override
@@ -50,7 +47,7 @@ public class BrandNameAdminServiceImpl implements BrandNameService {
 
     @Override
     public BrandName save(BrandName brandName) {
-        return null;
+        return brandNameRepository.save(brandName);
     }
 
     @Override

@@ -2,7 +2,6 @@ package ua.com.mddorder.service.adminservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.http.ResponseEntity;
 
 import ua.com.mddorder.repository.CityRepository;
 import ua.com.mddorder.service.CityService;
@@ -12,12 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CityAdminServiceImpl implements CityAdminService {
+public class AdminCityServiceImpl implements CityService {
 
     private final CityRepository cityRepository;
 
     @Autowired
-    public CityAdminServiceImpl(CityRepository cityRepository) {
+    public AdminCityServiceImpl(CityRepository cityRepository) {
         this.cityRepository = cityRepository;
     }
 
@@ -41,12 +40,14 @@ public class CityAdminServiceImpl implements CityAdminService {
 
     @Override
     public void deleteOne(Long id) {
+        cityRepository.getOne(id);
+
 
     }
 
     @Override
     public City save(City city) {
-        return null;
+        return cityRepository.save(city);
     }
 
     @Override

@@ -38,7 +38,6 @@ public class MainController {
         }
         return "login";
     }
-
 }
 
 

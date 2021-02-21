@@ -7,12 +7,14 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    List<ResponseEmployeeDto> getAll();
+    List getAll();
+
+    Employee getOne(Long id);
 
     Employee findByUsername(String username);
 
-    Employee findById(Long id);
 
-    Employee addNewEmployee(Employee employee);
+    Employee add(Employee employee);
+
 
 }

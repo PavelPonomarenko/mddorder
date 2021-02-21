@@ -20,9 +20,6 @@
 
     <properties>
         <java.version>11</java.version>
-        <!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-        <!--        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
-
     </properties>
 
     <dependencies>
@@ -39,6 +36,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -72,16 +74,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
     </dependencies>
 
     <build>
-        <finalName>pavelmddorder</finalName>
+        <finalName>mdd-order</finalName>
         <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
             </plugin>
             <plugin>
                 <groupId>org.liquibase</groupId>
@@ -90,7 +99,6 @@
                 <configuration>
                     <changeLogFile>classpath:/db/changelog/db.changelog-master.xml</changeLogFile>
                     <propertyFile>src/main/resources/liquibase.properties</propertyFile>
-                    <!--<propertyFileWillOverride>true</propertyFileWillOverride>-->
                 </configuration>
             </plugin>
         </plugins>

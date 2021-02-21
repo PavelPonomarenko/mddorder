@@ -1,21 +1,21 @@
-package ua.com.mddorder.service.impl;
+package ua.com.mddorder.service.adminservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.com.mddorder.model.Employee;
 import ua.com.mddorder.repository.EmployeeRepository;
-import ua.com.mddorder.service.AdminService;
+import ua.com.mddorder.service.EmployeeService;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AdminServiceEmployeeImpl implements AdminService<Employee> {
+public class AdminEmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
     @Autowired
-    public AdminServiceEmployeeImpl(EmployeeRepository employeeRepository) {
+    public AdminEmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
@@ -23,6 +23,7 @@ public class AdminServiceEmployeeImpl implements AdminService<Employee> {
     public List<Employee> getAll() {
         return employeeRepository.findAll();
     }
+
 
     @Override
     public Employee add(Employee entity) {
@@ -37,4 +38,10 @@ public class AdminServiceEmployeeImpl implements AdminService<Employee> {
         }
         return employeeRepository.getOne(id);
     }
+
+    @Override
+    public Employee findByUsername(String username) {
+        return null;
+    }
+
 }
